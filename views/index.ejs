@@ -1,0 +1,33 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listings</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our E-Commerce Store</h1>
+    </header>
+
+    <main>
+        <div class="product-list">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                    <img src="<%= product.imageUrl %>" alt="<%= product.name %>">
+                    <h2><%= product.name %></h2>
+                    <p><%= product.description %></p>
+                    <div class="price">$<%= product.price.toFixed(2) %></div>
+                    <button>Add to Cart</button>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
